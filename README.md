@@ -2,7 +2,7 @@
 
 ## [Full 100 Million Primes .txt File Download](https://www.mediafire.com/file/2vpk3ho0yeletsa/primes.txt/file)
 
-### ALl Other Files Can Be Downloaded Here
+### All Other Files (10, 100, 1k, 10k, 100k, 1m, 10m) Can Be Downloaded Here
 
 (Github file size limit doesn't allow me to upload the 100 millon here)
 
