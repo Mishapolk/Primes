@@ -218,3 +218,41 @@ fn main() {
 ```
 
 Here's a quick breakdown of what each function does:
+
+`precompute_primes`: Uses the Sieve of Eratosthenes algorithm to precompute prime numbers up to a given limit.
+- Initializes a vector `is_prime` to mark numbers as prime or not.
+- Marks non-prime numbers in the range.
+- Collects and returns the list of prime numbers.
+
+`is_prime`: Checks if a number is prime.
+- Uses a `HashSet` for memoization to avoid redundant checks.
+- Checks divisibility using precomputed primes.
+- Returns `true` if the number is prime, `false` otherwise.
+
+`generate_primes`: Continuously generates prime numbers.
+- Uses `Arc` and `Mutex` for thread-safe access to shared data (`primes`, `memo`, and `stop_flag`).
+- Initializes `candidate` as the next number to check.
+- Continuously checks each candidate for primality.
+- Updates the number of primes found and elapsed time on the console.
+- Breaks the loop if `stop_flag` is set to `true`.
+
+**Main Function:**
+- Initializes shared data structures (`primes`, `memo`, `stop_flag`) using `Arc` and `Mutex`.
+- Precomputes primes up to a limit and stores them in `primes`.
+- Clones `Arc` pointers for passing to the thread.
+- Spawns a thread to run `generate_primes` function.
+- Waits for the user to press Enter to stop the prime generation.
+- Sets `stop_flag` to `true` to stop the prime generation loop.
+- Joins the thread to ensure it finishes execution.
+- Writes the found primes and statistics (number of primes, elapsed time) to `primes.txt`.
+
+## Thank you for reading!
+
+Thanks to anyone who even got this far down on the page (probably no one), this was just something I was interested in, and thought I would publish my findings if anyone ever needs to use this data, so I figured I'd make it easily accessible. 
+
+If you want more prime data, make sure to either check out [Walter-Fendt.com](https://www.walter-fendt.de/html5/men/primenumbers_en.htm) or [Compasso.free](http://compoasso.free.fr/primelistweb/page/prime/liste_online_en.php). These are both awesome websites for looking up primes and searching for patterns. Once again thank you for reading this till the end if you are here, and pls star :)
+
+### Everything below is pointless wordspam for the SEO, nothing for you to find.
+
+Prime, prime digits, prime integers, prime numbers, prime numerals, prime figures, list of prime numbers, catalog of prime numbers, directory of prime numbers, 100 million primes, 100 million prime numbers, 100 million prime digits, 10 million primes, 10 million prime numbers, 10 million prime digits, 1 million primes, 1 million prime numbers, 1 million prime digits, 100 thousand primes, 100 thousand prime numbers, 100 thousand prime digits, 10 thousand primes, 10 thousand prime numbers, 10 thousand prime digits, 1 thousand primes, 1 thousand prime numbers, 1 thousand prime digits, 100 primes, 100 prime numbers, 100 prime digits, 10 primes, 10 prime numbers, 10 prime digits, primes list, list of primes, primes catalog, ordered list of primes, sorted list of primes, arranged list of primes, randomly ordered primes, unordered primes, random prime numbers, list of primes, catalog of primes, directory of primes, prime number list, list of prime digits, list of prime numerals, list of prime numbers up to 100 million, 100 million prime numbers list, prime numbers list up to 100 million, top 10 million primes, 10 million top primes, leading 10 million primes, prime numbers up to 1 million, 1 million prime numbers, list of primes up to 1 million, find 100 thousand prime numbers, locate 100 thousand primes, discover 100 thousand prime numbers, 10 thousand primes list, list of 10 thousand primes, catalog of 10 thousand primes, list of 1 thousand prime numbers, 1 thousand primes catalog, directory of 1 thousand prime numbers, 100 prime numbers, list of 100 primes, 100 primes catalog, top 10 prime numbers, leading 10 primes, best 10 prime numbers, comprehensive prime number list, exhaustive list of primes, full prime numbers catalog, detailed list of primes, thorough prime numbers list, in-depth list of primes, prime numbers sequence, sequence of primes, primes progression, sequence of prime numbers, prime number sequence, prime progression, 100 million prime numbers list, list of 100 million primes, catalog of 100 million primes, list of top 10 million primes, 10 million top primes list, leading 10 million prime numbers, 1 million prime numbers list, catalog of 1 million primes, list of 1 million prime digits, 100 thousand primes sequence, sequence of 100 thousand primes, progression of 100 thousand prime numbers, list of top 10 thousand primes, 10 thousand top primes list, leading 10 thousand prime numbers, 1 thousand prime numbers sequence, sequence of 1 thousand primes, progression of 1 thousand prime numbers, list of 100 prime numbers, catalog of 100 primes, directory of 100 prime numbers, list of top 10 primes, top 10 primes catalog, leading 10 prime numbers, prime numbers directory, directory of prime numbers, prime numbers register, prime numbers catalog, catalog of prime numbers, prime numbers archive, prime numbers index, index of primes, prime index, extensive list of primes, broad list of primes, comprehensive primes catalog, list of large primes, catalog of large primes, directory of large prime numbers, small prime numbers list, list of small primes, catalog of small prime numbers, huge prime numbers list, list of huge primes, catalog of huge prime numbers, ordered prime numbers list, sorted prime numbers catalog, arranged list of prime numbers, randomly ordered list of primes, unordered primes catalog, random list of primes, primes arranged list, arranged list of primes, primes ordered list, unordered list of prime numbers, unordered primes catalog, random prime numbers list, prime number catalog, catalog of prime numbers, prime numbers directory, prime number database, database of prime numbers, prime numbers repository, prime number register, register of prime numbers, prime numbers index, prime number archive, archive of prime numbers, prime numbers catalog, collection of prime numbers, prime numbers collection, prime numbers anthology, prime number chart, chart of prime numbers, prime numbers diagram, prime number graph, graph of prime numbers, prime numbers plot, prime number table, table of prime numbers, prime numbers matrix, prime number data, data of prime numbers, prime numbers statistics, prime number statistics, statistics of prime numbers, prime numbers data, prime number analysis, analysis of prime numbers, prime numbers evaluation, prime number details, details of prime numbers, prime numbers information
+
