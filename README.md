@@ -216,36 +216,6 @@ fn main() {
     println!("\nPrimes exported to primes.txt");
 }
 ```
-
-Here's a quick breakdown of what each function does:
-
-`precompute_primes`: Uses the Sieve of Eratosthenes algorithm to precompute prime numbers up to a given limit.
-- Initializes a vector `is_prime` to mark numbers as prime or not.
-- Marks non-prime numbers in the range.
-- Collects and returns the list of prime numbers.
-
-`is_prime`: Checks if a number is prime.
-- Uses a `HashSet` for memoization to avoid redundant checks.
-- Checks divisibility using precomputed primes.
-- Returns `true` if the number is prime, `false` otherwise.
-
-`generate_primes`: Continuously generates prime numbers.
-- Uses `Arc` and `Mutex` for thread-safe access to shared data (`primes`, `memo`, and `stop_flag`).
-- Initializes `candidate` as the next number to check.
-- Continuously checks each candidate for primality.
-- Updates the number of primes found and elapsed time on the console.
-- Breaks the loop if `stop_flag` is set to `true`.
-
-**Main Function:**
-- Initializes shared data structures (`primes`, `memo`, `stop_flag`) using `Arc` and `Mutex`.
-- Precomputes primes up to a limit and stores them in `primes`.
-- Clones `Arc` pointers for passing to the thread.
-- Spawns a thread to run `generate_primes` function.
-- Waits for the user to press Enter to stop the prime generation.
-- Sets `stop_flag` to `true` to stop the prime generation loop.
-- Joins the thread to ensure it finishes execution.
-- Writes the found primes and statistics (number of primes, elapsed time) to `primes.txt`.
-
 ## Thank you for reading!
 
 Thanks to anyone who even got this far down on the page (probably no one), this was just something I was interested in, and thought I would publish my findings if anyone ever needs to use this data, so I figured I'd make it easily accessible. 
